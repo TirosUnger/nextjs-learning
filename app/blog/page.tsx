@@ -11,7 +11,9 @@ export default function Blog() {
       <ul>
         {posts.map(post => (
           <li key={post.id} style={{ marginBottom: "1.5rem" }}>
-            <h2>{post.title}</h2>
+            <a href={`/blog/${post.id}`} style={{ color: "blue", textDecoration: "underline", cursor: "pointer" }}>
+              {post.title}
+            </a>
             <p>{post.excerpt}</p>
           </li>
         ))}
