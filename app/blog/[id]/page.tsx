@@ -26,23 +26,25 @@ export default async function BlogDetail({ params }: BlogDetailProps) {
 
   if (error) {
     return (
-      <div className="max-w-2xl mx-auto py-8 px-4">
-        <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 mb-6">
-          {error}
+      <div className="min-h-screen bg-gradient-to-br from-black via-slate-900 to-neutral-900 py-8 px-4">
+        <div className="max-w-2xl mx-auto">
+          <div className="p-4 bg-red-500/20 border border-red-500/30 rounded-lg text-red-200 mb-6">
+            {error}
+          </div>
+          <Link href="/blog" className="text-gray-300 hover:text-gray-100 transition">
+            ← 返回博客列表
+          </Link>
         </div>
-        <Link href="/blog" className="text-blue-500 hover:underline">
-          ← 返回博客列表
-        </Link>
       </div>
     );
   }
 
   if (!blog) {
     return (
-      <div className="max-w-2xl mx-auto py-8 px-4">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-700 mb-4">博客不存在</h1>
-          <Link href="/blog" className="text-blue-500 hover:underline">
+      <div className="min-h-screen bg-gradient-to-br from-black via-slate-900 to-neutral-900 py-8 px-4">
+        <div className="max-w-2xl mx-auto text-center">
+          <h1 className="text-2xl font-bold text-gray-300 mb-4">博客不存在</h1>
+          <Link href="/blog" className="text-gray-300 hover:text-gray-100 transition">
             ← 返回博客列表
           </Link>
         </div>
@@ -51,23 +53,26 @@ export default async function BlogDetail({ params }: BlogDetailProps) {
   }
 
   return (
-    <div className="max-w-2xl mx-auto py-8 px-4">
-      <Link href="/blog" className="text-blue-500 hover:underline mb-6 inline-block">
+    <div className="min-h-screen bg-gradient-to-br from-black via-slate-900 to-neutral-900 py-8 px-4">
+      <div className="max-w-2xl mx-auto">
+      <Link href="/blog" className="text-gray-300 hover:text-gray-100 transition mb-6 inline-block">
         ← 返回博客列表
       </Link>
 
-      <article className="mb-8">
+      <article className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-lg p-8 mb-8">
         <div className="flex justify-between items-start mb-4">
-          <h1 className="text-4xl font-bold">{blog.title}</h1>
+          <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-gray-100">
+            {blog.title}
+          </h1>
           <Link
             href={`/blog/${id}/edit`}
-            className="bg-green-500 hover:bg-green-600 text-white font-medium py-1 px-4 rounded transition text-sm"
+            className="bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-600 hover:to-gray-700 text-white font-medium py-1 px-4 rounded transition text-sm"
           >
             编辑
           </Link>
         </div>
 
-        <div className="flex items-center justify-between text-sm text-gray-500 mb-6 pb-6 border-b">
+        <div className="flex items-center justify-between text-sm text-gray-400 mb-6 pb-6 border-b border-white/10">
           <span>
             更新于 {blog.updatedAt
               ? new Date(blog.updatedAt).toLocaleDateString('zh-CN', {
@@ -82,16 +87,17 @@ export default async function BlogDetail({ params }: BlogDetailProps) {
           <span>👍 {blog.thumbup} 个赞</span>
         </div>
 
-        <div className="prose max-w-none mb-8">
-          <p className="text-gray-800 leading-relaxed whitespace-pre-wrap">
+        <div className="prose prose-invert max-w-none mb-8">
+          <p className="text-gray-300 leading-relaxed whitespace-pre-wrap">
             {blog.content}
           </p>
         </div>
 
-        <div className="border-t pt-6">
+        <div className="border-t border-white/10 pt-6">
           <ThumbUpButton id={id} />
         </div>
       </article>
+      </div>
     </div>
   );
 }

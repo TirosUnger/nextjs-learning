@@ -108,7 +108,7 @@ export default function EditBlogPage({ params }: EditBlogPageProps) {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="请输入博客标题"
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500"
             required
           />
         </div>
@@ -124,7 +124,7 @@ export default function EditBlogPage({ params }: EditBlogPageProps) {
             onChange={(e) => setContent(e.target.value)}
             placeholder="请输入博客内容"
             rows={10}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500"
             required
           />
         </div>
@@ -141,7 +141,7 @@ export default function EditBlogPage({ params }: EditBlogPageProps) {
           <button
             type="submit"
             disabled={loading}
-            className="flex-1 bg-blue-500 hover:bg-blue-600 disabled:bg-gray-400 text-white font-medium py-2 px-4 rounded-lg transition"
+            className="flex-1 bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-600 hover:to-gray-700 disabled:bg-gray-400 text-white font-medium py-2 px-4 rounded-lg transition"
           >
             {loading ? '更新中...' : '更新博客'}
           </button>

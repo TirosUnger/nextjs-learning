@@ -104,15 +104,15 @@ export default function ProfilePage() {
   const user = session.user;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-4">
+    <div className="min-h-screen bg-gradient-to-br from-black via-slate-900 to-neutral-900 p-4">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 left-1/3 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
-        <div className="absolute bottom-0 right-1/3 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+        <div className="absolute top-0 left-1/3 w-96 h-96 bg-slate-700 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
+        <div className="absolute bottom-0 right-1/3 w-96 h-96 bg-slate-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
       </div>
 
       <div className="relative max-w-md mx-auto">
         <div className="flex justify-between items-center mb-8 pt-4">
-          <h1 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
+          <h1 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-gray-100">
             个人中心
           </h1>
           <Link
@@ -125,7 +125,7 @@ export default function ProfilePage() {
 
         <div className="backdrop-blur-xl bg-white/10 rounded-2xl shadow-2xl border border-white/20 p-8 space-y-6">
           <div className="flex justify-center">
-            <div className="w-24 h-24 rounded-full bg-gradient-to-br from-blue-400 to-purple-600 flex items-center justify-center shadow-lg">
+            <div className="w-24 h-24 rounded-full bg-gradient-to-br from-gray-700 to-slate-800 flex items-center justify-center shadow-lg">
               <span className="text-4xl font-bold text-white">
                 {user.name?.[0] || user.email?.[0] || '?'}
               </span>
